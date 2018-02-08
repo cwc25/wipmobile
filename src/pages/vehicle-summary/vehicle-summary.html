@@ -1,0 +1,42 @@
+<!--
+  Generated template for the VehicleSummaryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Today's Summary</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="popover($event)">
+          <ion-icon name="ios-contact"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card>
+        <ion-card-header>
+          Total Miles
+        </ion-card-header>
+        <ion-card-content>
+          You have traveled for {{totalMiles}} Miles.
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+          <ion-card-header>
+            Average Miles
+          </ion-card-header>
+          <ion-card-content>
+            Average driving speed: {{average}} Miles per hour.
+           </ion-card-content>
+        </ion-card>
+</ion-content>
