@@ -10,6 +10,8 @@ import { TabsPage } from "../pages/tabs/tabs";
 import { VehicleSummaryPage } from "../pages/vehicle-summary/vehicle-summary";
 import { CirclePage } from "../pages/circle/circle";
 import {PopoverPage} from "../pages/popover/popover";
+import { CarService } from '../services/car-service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import {PopoverPage} from "../pages/popover/popover";
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -36,6 +39,7 @@ import {PopoverPage} from "../pages/popover/popover";
   providers: [
     StatusBar,
     SplashScreen,
+    CarService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

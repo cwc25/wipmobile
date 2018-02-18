@@ -22,12 +22,19 @@
 
 
 <ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+    
     <ion-card>
         <ion-card-header>
           Total Miles
         </ion-card-header>
         <ion-card-content>
-          You have traveled for {{totalMiles}} Miles.
+          <div *ngIf="driverData">
+              You have traveled for {{driverData.Report.TotalMiles}} Miles.
+          </div>
+          
         </ion-card-content>
       </ion-card>
 
@@ -36,7 +43,9 @@
             Average Miles
           </ion-card-header>
           <ion-card-content>
-            Average driving speed: {{average}} Miles per hour.
+            <div *ngIf="driverData">
+            Average driving speed: {{driverData.Report.AverageMiles}} Miles per hour.
+          </div>
            </ion-card-content>
         </ion-card>
 </ion-content>
