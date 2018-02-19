@@ -7,7 +7,7 @@ import { DriverData, DriverReport } from '../Model/DriverData';
 const httpOptions = {
     headers: new HttpHeaders(
         {
-            "":""
+            'Ocp-Apim-Subscription-Key':''
         }
     )};
 
