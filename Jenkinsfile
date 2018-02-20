@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:6-alpine'
+        }
+    }
     stages {
         stage('Build') {
             steps {
@@ -7,7 +11,6 @@ pipeline {
                 echo 'Install depedency...'
                 sh 'npm install'
                 echo 'Install Ionic and Cordova...'
-                sh 'npm install -g ionic cordova'
                 echo 'Build App...'
                 sh 'ionic cordova build android --prod --release'
 
