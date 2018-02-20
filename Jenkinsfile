@@ -5,6 +5,7 @@ pipeline {
             steps {
                 echo 'Building'
                 echo 'Install depedency...'
+                sh '#!/bin/sh -l'
                 sh 'npm install'
                 echo 'Install Ionic and Cordova...'
                 echo 'Build App...'
