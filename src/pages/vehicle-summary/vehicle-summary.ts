@@ -3,13 +3,16 @@ import { IonicPage, NavController, NavParams, PopoverController, Refresher, Toas
 import {PopoverPage} from '../popover/popover'
 import { CarService } from '../../services/car-service';
 import { DriverReport, DriverData } from '../../Model/DriverData';
-
+declare var WindowsAzure: any;
 /**
  * Generated class for the VehicleSummaryPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+
+
+
 @Component({
   selector: 'page-vehicle-summary',
   templateUrl: 'vehicle-summary.html',
@@ -35,6 +38,12 @@ export class VehicleSummaryPage {
     this.driverData.VehicleId="456"; */
     this.carService.GetMilesById(200).subscribe(data => this.driverData=data[0]);
     //this.carService.GetMilesById(200).subscribe(data => console.log(data));
+    var client = new WindowsAzure.MobileServiceClient("https://cs-mobile.azurewebsites.net");
+    var table = client.getTable("todoitem");
+    table.insert({
+      text: "test",
+      complete: false
+      }).then(console.log("inserted"));
   }
 
   popover(ev){

@@ -5,13 +5,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+//declare var WindowsAzure: any;
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   rootPage:any = TabsPage;
-
+  client: any;
+  
   constructor(platform: Platform, 
               statusBar: StatusBar, 
               splashScreen: SplashScreen,
@@ -22,6 +24,8 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
       menuCtrl.enable(true, 'myMenu');
+     // this.client = new WindowsAzure.MobileServiceClient('http://YourAzureMobileApp.azurewebsites.net');
+
     });
   }
 }
